@@ -1,5 +1,5 @@
 <template>
-    <ul class="menu bg-base-200 lg:menu-horizontal rounded-box">
+    <ul class="menu bg-base-200 lg:menu-horizontal rounded-box w-full bottom-0">
         <li>
             <div>
                 <Icon class="h-5 w-5" name="game-icons:all-for-one" />
