@@ -1,4 +1,4 @@
 <template>
-    <div>ELO</div>
+    <NavBar />
 </template>
 <style lang="scss" module></style>
