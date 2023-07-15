@@ -7,8 +7,8 @@
             <div class="w-full p-4">
                 <div class="tabs mb-0 pb-0">
                     <a class="tab tab-lifted">Actions</a>
-                    <a class="tab tab-lifted">Skills</a>
-                    <a class="tab tab-lifted tab-active">Shop</a>
+                    <a class="tab tab-lifted tab-active">Skills</a>
+                    <a class="tab tab-lifted ">Shop</a>
                     <a class="tab tab-lifted">Inventory</a>
                 </div>
                 <div class="bg-base-100 mt-0 rounded-md p-4">
