@@ -1,8 +1,4 @@
 <template>
-    <div :class="$style.testStyle">INDEX</div>
+    <div>ELO</div>
 </template>
-<style lang="scss" module>
-.testStyle {
-    color: red;
-}
-</style>
+<style lang="scss" module></style>
