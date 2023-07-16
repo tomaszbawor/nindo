@@ -1,15 +1,20 @@
 <template>
-    <div>Player Stats</div>
-    <div>
-        Level: 1
-    </div>
-    <div>
-        Exp : 10k / 100k
-    </div>
-    <div>
-        Energy: 10/ 100
-    </div>
-    <div>
-        Ryo: 1000
-    </div>
+    <section class="pt-5">
+        <div>Player Stats</div>
+        <div class="w-full gird grid-cols-2">
+            <div>
+                Level: 1
+            </div>
+            <div>
+                Exp : 10k / 100k
+            </div>
+            <div>
+                Energy: 10/ 100
+            </div>
+            <div>
+                Ryo: 1000
+            </div>
+        </div>
+
+    </section>
 </template>

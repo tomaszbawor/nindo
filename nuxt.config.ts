@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   ssr: false,
   modules: [
     '@nuxtjs/tailwindcss',
-    'nuxt-icon'
+    'nuxt-icon',
+    '@pinia/nuxt'
   ],
   tailwindcss: {
     cssPath: '~/assets/main.css'
