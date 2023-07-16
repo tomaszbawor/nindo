@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useMoney } from '~/store/money'
 const props = defineProps<PlayerSkillItemProps>()
+
+const moneyStore = useMoney()
 
 const currentExpStr = shortenNumber(props.currExp)
 const maxExpStr = shortenNumber(props.maxExp)
@@ -11,9 +14,13 @@ export interface PlayerSkillItemProps {
     currExp: number,
     maxExp: number,
 }
+
+const incrementMoney = () => {
+    moneyStore.increment(10)
+}
 </script>
 <template>
-    <div class="card bg-base-200 shadow-xl h-full">
+    <div class="card bg-base-200 shadow-xl h-full" @click="incrementMoney">
         <div class="card-body flex flex-col h-full">
 
             <div>

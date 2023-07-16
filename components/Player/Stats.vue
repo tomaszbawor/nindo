@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+import { useMoney } from '../../store/money';
+
+const money = useMoney();
+</script>
 <template>
     <section class="pt-5">
         <div>Player Stats</div>
@@ -12,7 +17,7 @@
                 Energy: 10/ 100
             </div>
             <div>
-                Ryo: 1000
+                Ryo: {{ shortenNumber(money.ryuCount) }}
             </div>
         </div>
 
