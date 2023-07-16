@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useMoney } from '~/store/money'
+import { useTrainingSkills } from '~/store/trainingSkills';
 const props = defineProps<PlayerSkillItemProps>()
-
-const moneyStore = useMoney()
 
 const currentExpStr = shortenNumber(props.currExp)
 const maxExpStr = shortenNumber(props.maxExp)
@@ -13,14 +11,15 @@ export interface PlayerSkillItemProps {
     level: number,
     currExp: number,
     maxExp: number,
+    isTrained: boolean
 }
 
-const incrementMoney = () => {
-    moneyStore.increment(10)
+const markSkill = () => {
+    useTrainingSkills().setCurrentlyTrained(props.name)
 }
 </script>
 <template>
-    <div class="card bg-base-200 shadow-xl h-full" @click="incrementMoney">
+    <div class="card bg-base-200 hover:bg-base-300 shadow-xl h-full cursor-pointer" @click="markSkill">
         <div class="card-body flex flex-col h-full">
 
             <div>

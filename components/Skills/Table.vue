@@ -1,20 +1,18 @@
 <script setup lang="ts">
 
-import { fakeSkills, PlayerSkill } from './Skills'
-const skills: Array<PlayerSkill> = fakeSkills.map<PlayerSkill>((fakeSkill) => {
-    return {
-        ...fakeSkill,
-        level: Math.floor(Math.random() * 10) + 1,
-        maxExp: 1000,
-        currentExp: Math.floor(Math.random() * 1001)
-    }
-})
-</script>
+import { PlayerSkill, fakeSkills } from '~/domain/skils'
+import { TrainingSkill, useTrainingSkills } from '~/store/trainingSkills'
+
+const currentlyTrained = useTrainingSkills().currentlyTrainedSkill
+
+const skills: Array<TrainingSkill> = useTrainingSkills().skills
+</script> 
 <template>
-    <div class="grid grid-cols-5 gap-4">
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
         <fragment v-for="skill in skills">
-            <SkillsItem :name="skill.name" :description="skill.description" :curr-exp="skill.currentExp"
-                :max-exp="skill.maxExp" :level="skill.level" />
+            <SkillsItem v-if="skill.enabled" :name="skill.name" :description="skill.description"
+                :curr-exp="skill.currentExp" :max-exp="skill.maxExp" :level="skill.level"
+                :isTrained="skill.name === currentlyTrained" />
         </fragment>
     </div>
 </template>
