@@ -2,12 +2,15 @@
 import { useTrainingSkills } from '~/store/trainingSkills';
 const props = defineProps<PlayerSkillItemProps>()
 
-const currentExpStr = shortenNumber(props.currExp)
-const maxExpStr = shortenNumber(props.maxExp)
+const currentExpStr = computed(() => {
+    return shortenNumber(props.currExp)
+});
+
+const maxExpStr = computed(() => shortenNumber(props.maxExp));
 
 export interface PlayerSkillItemProps {
-    name: String,
-    description: String,
+    name: string,
+    description: string,
     level: number,
     currExp: number,
     maxExp: number,
@@ -16,6 +19,8 @@ export interface PlayerSkillItemProps {
 
 const markSkill = () => {
     useTrainingSkills().setCurrentlyTrained(props.name)
+    const exp = Math.floor(Math.random() * 1000);
+    useTrainingSkills().updateSkillExp(props.name, exp);
 }
 </script>
 <template>

@@ -7,12 +7,16 @@ export const useTrainingSkills = defineStore('trainingSkills', {
             currentlyTrainedSkill: null
         }
     }, actions: {
-        setCurrentlyTrained(skillName:string) {
+        setCurrentlyTrained(skillName: string) {
             console.log(`Updating currently trained skill to: ${skillName}`)
             this.currentlyTrainedSkill = skillName
         }, updateSkillExp(skillName: string, exp: number) {
             // TODO: Implement logic
-            console.log(`Updating skill : ${skillName} for ${exp} exp`)
+            const skillToChanges = this.skills.filter(({name}) => {
+                return name === skillName
+            })
+              skillToChanges[0].currentExp *=  2;
+            skillToChanges[0].currentExp +=  exp;
         }
     }
 })
